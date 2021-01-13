@@ -1,8 +1,3 @@
-
-/* 1 || 0; false || true;
-true > 0.
-*/
-
 let a1 = 5 % 3;
 
 console.log(a1, typeof a1);
