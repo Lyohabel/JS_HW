@@ -6,4 +6,4 @@ let h = 10;
 
 let STrap = (a + b) / 2 * h;
 
-console.log(STrap + " кв. см")
+console.log(STrap + " кв. см");
