@@ -300,9 +300,9 @@ function alignLines(a, b, c) {
     let arrLength = [a.length, b.length, c.length],
         arrLength2 = arrLength.sort((a, b) => a - b),
 
-        max = arrLength2[0],
+        max = arrLength2[2],
         medium = arrLength2[1],
-        min = arrLength2[2],
+        min = arrLength2[0],
 
         diff1 = max - medium,
         diff2 = max - min;
