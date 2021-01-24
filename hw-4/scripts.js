@@ -184,9 +184,9 @@ console.log (sumArr);
 */
 
 let arrTriangle = [
-    [' ', ' ', ' ', '^', ' ', ' ', ' '],
-    [' ', ' ', '^', '^', '^', ' ', ' '],
-    [' ', '^', '^', '^', '^', '^', ' '],
+    [' ', ' ', ' ', '^'],
+    [' ', ' ', '^', '^', '^'],
+    [' ', '^', '^', '^', '^', '^'],
     ['^', '^', '^', '^', '^', '^', '^'],
 ];
 
@@ -194,8 +194,7 @@ let triangle1 = arrTriangle[0].join(''),
     triangle2 = arrTriangle[1].join(''),
     triangle3 = arrTriangle[2].join(''),
     triangle4 = arrTriangle[3].join('');
-    triangle = triangle1 + '\n' + triangle2 + '\n' + triangle3 + '\n' + triangle4;
-
+    
 console.log (triangle1);
 console.log (triangle2);
 console.log (triangle3);
@@ -203,5 +202,10 @@ console.log (triangle4);
 
 //alert (triangle);
 
+let arrTriangle1 = [' ', ' ', ' ', ' ', '^', '\n',
+ ' ', ' ', '^', '^', '^', '\n', ' ', '^', '^', '^', '^', '^', '\n', '^', '^', '^', '^', '^', '^', '^'];
 
+let triangle5 = arrTriangle1.join('');
+
+alert (triangle5);
 
