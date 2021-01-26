@@ -4,18 +4,23 @@
  Калькулятор. Возможные методы: вкл/выкл калькулятора, получение выражения для
 расчета или, а и б числа с операцией, вычисление выражения, показ результата расчета. &radic; */
 
-/*let Calc = function() {
-    this.get = function(){
-        this.a = +promt('Введите число а');
-        this.oper = promt('Введите операцию: +, -, *, /, **, √');
+let Calc = function() {
+  this.start = function() {
+    alert('Здравствуйте! Это программа-калькулятор.');
+    this.get();
+  };
+
+  this.get = function(){
+        this.a = +prompt('Введите число а');
+        this.oper = prompt('Введите операцию: +, -, *, /, **, √');
         if (this.oper != '√') {
-        this.b = +promt('Введите число b');
+        this.b = +prompt('Введите число b');
         };    
   
         this.operation();
-    };
+  };
   
-    this.operation = function() {
+  this.operation = function() {
     switch(this.oper) {
       case '+':
         this.result = this.a + this.b;
@@ -45,78 +50,85 @@
     }; 
   
     this.show();
-    };
+  };
   
-    this.show = function() {
-        if(this.oper = '√') {
+  this.show = function() {
+        if(this.oper == '√') {
             alert(this.oper + ' ' + this.a + ' = ' + this.result);
         } else {        
             alert(this.a + ' ' + this.oper + ' ' + this.b + ' = ' + this.result);
           }; 
+
+    this.continue();
     
+  };
+
+  this.continue = function() {
+    if (confirm('Продолжить вычисления?')) {
+      this.get();
+    } else {
+      alert('Спасибо за внимание!');
     };
-  
+  }  
 };
   
 let calc = new Calc();
-console.log(calc);
+//calc.start();
 
-calc.get(); */
-
-let Calc = function() {
-    this.get = function(){
-        this.a = +promt('Введите число а');
-        this.b = +promt('Введите число b');
-        this.oper = promt('Введите операцию: +, -, *, /');
-  
-    this.operation();
-    };
-  
-    this.operation = function() {
-    switch(this.oper) {
-      case '+':
-        this.result = this.a + this.b;
-      break;
-  
-      case '-':
-        this.result = this.a - this.b;
-      break;
-  
-      case '*':
-        this.result = this.a * this.b;
-      break;
-  
-      case '/':
-        this.result = this.a / this.b;
-      break;
-  
-      default: this.result = 0;
-    };
-  
-    this.show();
-    };
-  
-    this.show = function() {
-    alert(this.a + ' ' + this.oper + ' ' + this.b + ' = ' + this.result);
-    };
-  
+let Vote = function() {
+  this.start = function() {
+    if (confirm('Вы согласны принять участие в пользовательском голосорвании?')) {
+      this.choice();
+    } else { alert('Извините за беспокойство!');
+      };
   };
+
+  this.choice = function() {
+    alert(`Выберите автора лучшей фотографии:
+    Алексей Аверченко, №1,
+    Светлана Ушакова, №2,
+    Сергей Хомич, №3.`);
+    
+    this.person = prompt('Введите номер выбранного кандидата: 1, 2, 3');
+
+    this.check();
+  };
+
+  this.check = function(){        
+    switch(this.person) {
+      case '1':
+        if (confirm('Ваш выбор - Алексей Аверченко, верно?')) break;
+        else {
+          alert('Попробуем еще раз. Будьте внимательны!');
+          this.choice();
+        }
+      break;
   
-  let calc = new Calc();
-  calc.get();
+      case '2':
+        if (confirm('Ваш выбор - Светлана Ушакова, верно?')) break;
+          else {
+            alert('Попробуем еще раз. Будьте внимательны!');
+            this.choice();
+          }
+      break;
+  
+      case '3':
+        if (confirm('Ваш выбор - Сергей Хомич, верно?')) break;
+        else {
+          alert('Попробуем еще раз. Будьте внимательны!');
+          this.choice();
+        }
+      break;
+  
+      default: 
+      if (confirm('Вы не выбрали кандидата. Желаете продолжить?')) {
+        this.choice();
+      } else {
+        break;
+        } 
+    }; 
+  }
+}
 
-
-/*  Лампочка. Возможные методы: ввод информации о лампочке (мощность, стоимость
-электроэнергии), вкл./выкл. лампочки, получение расхода за горение лампочки,
-счетчик горения лампочки.
- Чайник. Возможные методы: ввод инф. о чайнике (мощность, объем, кол-во воды),
-вкл./выкл., расчет времени закипания воды.
- Автомобиль. Возможные методы: ввод информации об авто (марка, номер), вкл./выкл.
-двигателя, вкл./выкл. передачи (вперед, назад, нейтральная), движение вперед и назад
-(ввод информации о скорости движения), расчет пройденных километров.
- Контакты. Возм. методы: добавление нового контакта (ввод ФИО, возраст, телефон, эл.
-почта), проверка введенной информации, например: проверить возраст – должен быть
-целым неотрицательным числом больше 18, вывод информации о конкретном
-контакте, вывод всех контактов.
-Можно выдумать любой другой объект. Кол-во методов и свойств может быть любым, но не
-менее трех. */
+let vote = new Vote();
+//vote.start();
