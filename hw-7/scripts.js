@@ -75,6 +75,10 @@ let Calc = function() {
 let calc = new Calc();
 //calc.start();
 
+let counter1 = 0,
+    counter2 = 0,
+    counter3 = 0;
+
 let Vote = function() {
   this.start = function() {
     if (confirm('Вы согласны принять участие в пользовательском голосорвании?')) {
@@ -97,27 +101,33 @@ let Vote = function() {
   this.check = function(){        
     switch(this.person) {
       case '1':
-        if (confirm('Ваш выбор - Алексей Аверченко, верно?')) break;
-        else {
+        if (confirm('Ваш выбор - Алексей Аверченко, верно?')) {
+          counter1++;
+          break;
+        } else {
           alert('Попробуем еще раз. Будьте внимательны!');
           this.choice();
-        }
+        };
       break;
   
       case '2':
-        if (confirm('Ваш выбор - Светлана Ушакова, верно?')) break;
-          else {
+        if (confirm('Ваш выбор - Светлана Ушакова, верно?')) {
+          counter1++;
+          break;
+        } else {
             alert('Попробуем еще раз. Будьте внимательны!');
             this.choice();
-          }
+          };
       break;
   
       case '3':
-        if (confirm('Ваш выбор - Сергей Хомич, верно?')) break;
-        else {
+        if (confirm('Ваш выбор - Сергей Хомич, верно?')) {
+          counter1++;
+          break;
+        } else {
           alert('Попробуем еще раз. Будьте внимательны!');
           this.choice();
-        }
+          };
       break;
   
       default: 
@@ -125,9 +135,18 @@ let Vote = function() {
         this.choice();
       } else {
         break;
-        } 
-    }; 
+        }; 
+    }
+
+    this.showTotalCounter();
   }
+
+  this.showTotalCounter = function() {
+    alert(`Предварительные итоги:
+    Алексей Аверченко - ${counter1} голосов,
+    Светлана Ушакова - ${counter2},
+    Сергей Хомич - ${counter3}.`)
+  }; 
 }
 
 let vote = new Vote();
