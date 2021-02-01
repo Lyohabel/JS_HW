@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+	width: 80%;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding-top: 50px;
+	display: flex;
+}
+
+.task-buttons {
+	display: flex;
+	flex-direction: column;
+}
+
+.task-but,
+.task-but2,
+.task-but3,
+.task-but4 {
+	width: 80px;
+	height: 80px;
+	padding: 5px;
+	color: #fff;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	background-color: rgb(96, 184, 235);
+	border: 2px solid rgba(201, 197, 197, 0.8);
+	border-radius: 50%;
+}
+
+.task-but2 {
+	background-color: rgb(211, 226, 235);
+	color: #000;
+	display: none;
+}
+
+.task-but3 {
+	background-color: rgb(245, 248, 72);
+	color: #000;
+	display: none;
+	margin-top: 30px;
+}
+
+.task-but4 {
+	background-color: rgb(43, 196, 68);
+	color: #000;
+	display: none;
+	margin-top: 30px;
+}
+
+.tasks {
+	width: 350px;
+	min-height: 150px;
+	margin-left: 50px;
+	border: 2px solid rgba(201, 197, 197, 0.5);
+	border-radius: 5px;
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+.hidden {
+	display: none;
+}
+
+.task-title {
+	text-align: center;
+	letter-spacing: 2px;
+	padding: 15px 0;
+	color: #fff;
+	background-color: rgb(96, 184, 235);
+}
+
+.task-input {
+	width: 97%;
+	height: 40px;
+	font-size: 18px;
+	font-style: italic;
+	display: block;
+	margin: 0 auto;
+	margin-top: 5px;
+	padding-left: 10px;
+	border: 2px solid rgba(201, 197, 197, 0.5);
+	border-radius: 2px;
+}
+
+.task-list {
+	width: 97%;
+	margin: 0 auto;
+}
+
+.task-item {
+	padding: 10px 0;
+	padding-left: 10px;
+	margin: 3px 0;
+	background-color: rgba(240, 240, 240, 0.5);
+	border-bottom: 2px solid rgba(201, 197, 197, 0.5);
+	display: flex;
+	align-items: center;
+	
+}
+
+.task-checkbox {
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: 2px;
+	background-color: rgb(228, 224, 224);
+	margin-right: 30px;
+}
+
+.checkbox-checked {
+	background-color: rgb(27, 206, 57);
+}
+
+.task-note {
+	display: block;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.task-note-checked {
+	color: rgba(201, 197, 197, 0.5);
+	text-decoration: line-through;
+}
