@@ -269,7 +269,9 @@ document.body.appendChild(styleRightBut);
 
 
 
-/*let title = document.createElement('title');
+/* КОНСПЕКТ ВИДЕОУРОКА: 
+
+let title = document.createElement('title');
 title.innerHTML = 'New html document';
 
 let metaUtf8 = document.createElement('meta');
