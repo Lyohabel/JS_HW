@@ -17,6 +17,8 @@ font-family: Arvo;
 
 //document.html.setAttribute('land', 'en');
 
+document.querySelector('html').setAttribute('lang', 'en'); // - доб атрибута тзгу html
+
 let title = document.createElement('title');
 title.innerHTML = 'Hw-8 Call_to_Action#3.fig';
 

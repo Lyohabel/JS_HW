@@ -1,0 +1,103 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	width: 80%;
+	max-width: 1280px;
+	padding: 20px 0;
+	margin: 0 auto;
+}
+
+.site {
+	background-color: blanchedalmond;
+}
+
+h1, h2, p {
+	margin-bottom: 25px;
+	text-align: center;
+}
+
+h1 {
+	font-size: 52px;
+}
+
+h2 {
+	font-size: 36px;
+}
+
+p {
+	font-size: 18px;
+	line-height: 28px;
+}
+
+.reg {
+	font-weight: bold;
+	letter-spacing: 1px;
+	width: 220px;
+	padding: 10px;
+	border-radius: 7px;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 25px;
+	background-color: rgb(94, 235, 152);
+	cursor: pointer;
+}
+
+.reg:hover {
+	background-color: rgb(94, 195, 235);
+}
+
+.popUp {
+	width: 350px;
+	padding: 10px;
+	background-color: rgb(147, 220, 238);
+	border-radius: 10px;
+	border: 2px solid #000;
+	position: fixed;
+	left: calc(50% - 175px);
+	top: 50px;
+	display: none;
+}
+
+.show-popUp {
+	display: block;
+}
+
+.form {
+	width: 100%;
+	font-size: 18px;
+}
+
+.field {
+	width: 95%;
+	padding: 5px;
+}
+
+.field input {
+	width: 85%;
+}
+
+.height {
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+.but {
+	margin: 5px;
+	width: 100px;
+	background-color: rgb(230,230,150);
+}
+
+.but:hover {
+	background-color: rgb(130,230,150);
+}
+
+.close {
+	background-color: rgb(236, 43, 43);	
+}
+
+.close:hover {
+	background-color: rgb(158, 55, 55);	
+}
