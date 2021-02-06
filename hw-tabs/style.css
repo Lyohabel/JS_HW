@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+	width: 80%;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding-top: 50px;
+}
+
+h3 {
+	margin-bottom: 10px;
+}
+
+.tab {
+	width: 500px;
+	height: 200px;
+	border: 2px solid rgb(207, 202, 202);
+	border-radius: 5px;
+}
+
+.tab-buttons {
+	width: 80%;
+	display: flex;
+	border-bottom: 2px solid rgb(207, 202, 202);
+	margin-bottom: 50px;
+}
+
+.tab-but1, .tab-but2, .tab-but3 {
+	background-color: #fff;
+	width: 33.33%;
+	border: 0;
+	border-right: 2px solid rgb(207, 202, 202);
+}
+
+.tab-item1, .tab-item2, .tab-item3 {
+	display: none;
+	width: 300px;
+	padding: 10px;
+}
+
+.tab-but1, .tab-item1 {
+	color: rgb(9, 163, 112);
+}
+
+.tab-but2, .tab-item2 {
+	color: rgb(223, 98, 26);
+}
+
+.tab-but3, .tab-item3 {
+	color: rgb(76, 50, 224);
+}
+
+.show {
+	display: block;
+}
+
+.activ {
+	background-color: rgb(236, 243, 174);
+	font-weight: bold;
+}
