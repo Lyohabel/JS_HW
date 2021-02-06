@@ -28,7 +28,10 @@ window.addEventListener('load', function() {
                              (slideImg.classList.value == 'slide-img move5') {
                                 slideImg.classList.remove('move5');
                                 slideImg.classList.add('move6'); 
-                                 }           
+                                 } else if
+                                 (slideImg.classList.value == 'slide-img move6') {
+                                    slideImg.classList.remove('move6');
+                                    }          
         });
 
         right.addEventListener('click', function() {
@@ -54,7 +57,10 @@ window.addEventListener('load', function() {
                              } else if
                              (slideImg.classList.value == 'slide-img move') {
                                 slideImg.classList.remove('move');
-                                }           
+                                } else if
+                                (slideImg.classList.value == 'slide-img') {
+                                    slideImg.classList.add('move6');
+                                }
         });           
         
 });
