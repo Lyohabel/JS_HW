@@ -1,0 +1,54 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	width: 80%;
+	max-width: 1280px;
+	padding: 20px 0;
+	margin: 0 auto;
+}
+
+.site {
+	background-color: blanchedalmond;
+}
+
+h1, h2, p {
+	margin-bottom: 25px;
+	text-align: center;
+}
+
+h1 {
+	font-size: 52px;
+}
+
+h2 {
+	font-size: 36px;
+}
+
+p {
+	font-size: 18px;
+	line-height: 28px;
+}
+
+.images {
+	text-align: center;
+	padding: 30px 0;
+	position: relative;
+}
+
+.small-bul {
+	margin-right: 50px;
+}
+
+.big-bul, .big-cow {
+	display: none;
+}
+
+.show-image {
+	display: block;
+	position: absolute;
+	top: -50px;
+	left: 300px;
+}

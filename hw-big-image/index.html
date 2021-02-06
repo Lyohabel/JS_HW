@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Big images</title>
+
+	<link rel="stylesheet" href="style.css" />
+
+	<link rel="stylesheet" href="media.css"/>
+
+</head>
+
+<body>
+	<div class="site">
+		<div class="container">
+			<h2>Lorem ipsum dolor sit amet?</h2>
+
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam doloribus expedita alias nesciunt
+				inventore. Unde labore voluptas architecto velit dolor voluptates repellendus inventore quos itaque
+				libero? Pariatur ea excepturi modi?</p>
+
+			<h1>Unde labore voluptas.</h1>
+
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam doloribus 		expedita alias nesciunt
+				inventore. Unde labore voluptas architecto velit dolor voluptates repellendus inventore quos itaque
+				libero? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, officia eum. Non inventore minus
+				unde dicta quo eos asperiores, facere autem, soluta eveniet fugit, libero voluptate sed rerum sapiente
+				minima? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, officia eum. Non inventore minus
+				unde dicta quo eos asperiores, facere autem, soluta eveniet fugit, libero voluptate sed rerum sapiente
+				minima? Pariatur ea excepturi modi?</p>
+
+			<div class="images">
+				<img class="small-bul" src="/bul-small.jpg" alt="#">
+				<img class="small-cow" src="/cow-small.jpg" alt="#">
+				<img class="big-bul" src="/bul.jpg" alt="#">
+				<img class="big-cow" src="/cow.jpg" alt="#">
+			</div>
+
+			<h2>Lorem ipsum dolor sit amet?</h2>
+
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam doloribus expedita alias nesciunt
+				inventore. Unde labore voluptas architecto velit dolor voluptates repellendus inventore quos itaque
+				libero? Pariatur ea excepturi modi?Lorem ipsum dolor sit amet consectetur adipisicing elit. Non sit,
+				aliquid deserunt veniam fuga debitis officiis cum, pariatur minima ducimus vitae sint minus porro
+				reprehenderit iste, voluptatibus recusandae cumque. Perferendis?Lorem ipsum dolor sit amet consectetur
+				adipisicing elit. Soluta accusamus voluptatem provident fuga deleniti nobis et sequi. Numquam corporis in, perferendis perspiciatis reiciendis velit officia! </p>
+
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam doloribus 			expedita alias nesciunt inventore. Unde labore voluptas architecto velit dolor 		voluptates repellendus inventore quos itaque
+				libero? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, officia eum. Non inventore minus	unde dicta quo eos asperiores, facere autem, soluta eveniet fugit, libero voluptate sed rerum sapiente minima? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, officia eum. Non inventore minus
+				unde dicta quo eos asperiores, facere autem, soluta eveniet fugit, libero voluptate sed rerum sapiente minima? Pariatur ea excepturi modi?</p>				
+		</div>
+	</div>
+
+	<script>
+		let bul = document.querySelector('.small-bul'),
+			cow = document.querySelector('.small-cow'),
+			bigBul = document.querySelector('.big-bul'),
+			bigCow = document.querySelector('.big-cow');
+
+		bul.addEventListener('click', function() {			
+			bigBul.classList.add('show-image');
+		});
+		bigBul.addEventListener('click', function() {			
+			this.classList.remove('show-image');
+		});
+
+		cow.addEventListener('click', function() {			
+			bigCow.classList.add('show-image');
+		});
+		bigCow.addEventListener('click', function() {			
+			this.classList.remove('show-image');
+		});		
+	</script>
+
+</body>
+
+</html>
