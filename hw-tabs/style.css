@@ -31,8 +31,12 @@ h3 {
 .tab-but1, .tab-but2, .tab-but3 {
 	background-color: #fff;
 	width: 33.33%;
-	border: 0;
+	border: 2px solid #fff;
 	border-right: 2px solid rgb(207, 202, 202);
+}
+
+.buts:hover {
+	border: 2px solid rgb(224, 38, 153);
 }
 
 .tab-item1, .tab-item2, .tab-item3 {
