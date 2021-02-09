@@ -47,9 +47,7 @@
 				inventore. Unde labore voluptas architecto velit dolor voluptates repellendus inventore quos itaque
 				libero? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, officia eum. Non inventore minus
 				unde dicta quo eos asperiores, facere autem, soluta eveniet fugit, libero voluptate sed rerum sapiente
-				minima? Pariatur ea excepturi modi?</p>
-
-				<!-- <a href="popUp.html">Пройти регистрацию</a> -->
+				minima? Pariatur ea excepturi modi? Для этого Вам необходимо <a class="reg2" href="#">пройти регистрацию</a>.</p>
 
 			<h2>Lorem ipsum dolor sit amet?</h2>
 
@@ -141,7 +139,7 @@
 
 					<button class="but" type="submit">Отправить</button>
 					<button class="but" type="reset">Очистить</button>
-					<button class="but close">Закрыть</button>
+					<button class="but close" type="button">Закрыть</button>
 				</form>
 			</div>
 		</div>
@@ -149,8 +147,14 @@
 
 	<script>
 		let showRegForm = document.querySelector('.reg'),
+			showRegForm2 = document.querySelector('.reg2'),
 			regForm = document.querySelector('.popUp');
+
 		showRegForm.addEventListener('click', function() {			
+			regForm.classList.add('show-popUp');
+		});
+
+		showRegForm2.addEventListener('click', function() {			
 			regForm.classList.add('show-popUp');
 		});
 
