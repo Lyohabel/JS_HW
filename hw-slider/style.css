@@ -13,9 +13,7 @@
 
 .slide-wrapper {
 	width: 500px;
-	margin: 0 auto;
-	display: flex;
-	align-items: center;
+	margin: 0 auto;	
 }
 
 .slide-left,
@@ -28,10 +26,11 @@
 	border: 1px solid rgb(202, 196, 196);
 	border-radius: 7px;
 	cursor: pointer;
+	margin-left: 40px;
 }
 
 .slide-seen {
-	width: 280px;
+	width: 370px;
 	overflow: hidden;
 	padding: 0 5px;
 }
@@ -39,6 +38,7 @@
 .slide-img {
 	display: flex;
 	transition: 0.4s linear;
+	list-style: none;
 }
 
 .slide-item {
@@ -46,7 +46,7 @@
 	padding: 5px;
 }
 
-.move {
+/*.move {
     transform: translateX(-180px);
 }
 
@@ -68,4 +68,4 @@
 
 .move6 {
     transform: translateX(-1080px);
-}
+}*/
