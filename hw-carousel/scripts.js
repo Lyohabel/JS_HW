@@ -5,29 +5,32 @@ window.addEventListener('load', function() {
         slideImg = document.querySelector('.slide-img'),
         slides = slideImg.children;
 
-        left.addEventListener('click', function() {
-           /* slides[1].classList.add('move');*/   
-            let a = slides[0];
-            slideImg.removeChild(slides[0]);
-            slideImg.appendChild(a);                  
-        });
-
+    const next = function() {
         right.addEventListener('click', function() {
-             let a = slides[6];
-             slideImg.removeChild(slides[6]);
-             slideImg.insertBefore(a, slideImg.firstChild);                  
-         });
+        slideImg.classList.add('move');
+        slideImg.classList.add('for-move');
+        slideImg.appendChild(slides[0]);
+        setTimeout(function() {
+            slideImg.classList.remove('move');
+            slideImg.classList.remove('for-move'); 
+            }, 600);
+                                     
+        });
+    };
 
-                   
-           
+    next();
 
-
-        
-        /* setTimeout(function() {
-            let a = slides[0];
-            slideImg.removeChild(slides[0]);
-            slideImg.appendChild(a);
-            }, 1000); */  
-        
-        
+    const previous = function() {
+        left.addEventListener('click', function() {
+        slideImg.classList.add('move2');
+        slideImg.classList.add('for-move2');
+        slideImg.insertBefore(slideImg.lastElementChild, slideImg.firstElementChild);
+        setTimeout(function() {
+            slideImg.classList.remove('move2');
+            slideImg.classList.remove('for-move2'); 
+            }, 600);                  
+        });
+    };
+    
+    previous();
 });
