@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+    <title>hw-slider</title>
+    
+    <link rel="stylesheet" href="style.css"/>
+	 
+	<script src="scripts.js"></script>
+	
+</head>
+<body>
+    <div class="slider">
+        <div class="container">
+
+            <div class="slide-wrapper">                               
+                <div class="slide-seen">
+                    <ul class="slide-img">
+                        <li class="slide-item"><img src="/images/red.png" alt="#"></li> <!-- should be duplicated -->
+                        <li class="slide-item"><img src="/images/orange.png" alt="#"></li> <!-- should be duplicated -->
+                        <li class="slide-item"><img src="/images/yellow.png" alt="#"></li>
+                        <li class="slide-item"><img src="/images/green.png" alt="#"></li>
+                        <li class="slide-item"><img src="/images/light-blue.png" alt="#"></li>
+                        <li class="slide-item"><img src="/images/blue.png" alt="#"></li>
+                        <li class="slide-item"><img src="/images/purple.png" alt="#"></li>
+                        <li class="slide-item"><img src="/images/red.png" alt="#"></li> <!-- duplicated li:first-child -->
+                        <li class="slide-item"><img src="/images/orange.png" alt="#"></li><!-- duplicated li:nth-child(2) -->
+                    </ul>                    
+                </div>
+
+                <button class="slide-right">&#60;&#60;</button>
+                <button class="slide-left">&#62;&#62;</button> 
+
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+
