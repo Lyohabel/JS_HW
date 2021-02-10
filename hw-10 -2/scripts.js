@@ -22,79 +22,67 @@ window.addEventListener('load', function() {
 выполнения функции (проверьте доступность контекста this и event).
 */
 
-let WorkDom = function(elem, tagName, className, selector, value) {
-  this.elem = elem;
-  this.tagName = tagName;
-  this.className = className;
-  this.selector = selector;
-  this.value = value;
+  const DOM = function() {
+    this.create = function(tagName, value) {
+        const elem = document.createElement(tagName, value);
+        elem.innerHTML = value;
+            
+        return element;
+    };
 
-  this.creat = function(tagName) {
-    this.elem = document.createElement(tagName);
-    return elem;
+    this.attr = function(elem, name, value) {
+      elem.setAttribute(name, value);
+
+      return name + ',' + ' ' + value;
+    };
+
+    this.html = function(elem, value) {
+      elem.innerHTML = value;
+      return value;
+    };
+
+    this.search = function(elem, selector) {
+      this.child = elem.querySelector(selector);
+
+      return child;
+    };
+
+    this.addClass = function(elem, className) {
+      elem.classList.add(className);
+    };
+
+    this.removeClass = function(elem, className) {
+      elem.classList.remove(className);
+    };
+    
+    this.toggleClass = function(elem, className) {
+      elem.classList.toggle(className);
+    };
+
+    this.hasClass = function(elem, className) {
+      return elem.classList.contains(className);
+    };
+    
+    this.append = function(elem, newElem, beforeElem) {
+        if (beforeElem == undefined) to.appendChild(elem);
+        else newElem.insertBefore(eleme, beforeElem);
+    };
+
+    this.on = function(elem, eventName) {
+    elem.addEventListener(eventName, function() {});
+    };
   };
 
-  this.creat(tagName);
+  function changeBGC(elem, eventName) {
+    elem.style.backgroungColor = 'red';
+  };
+  
+  const dom = new DOM();
+  
+  const div = dom.create('div', 'XXXXXXXXXX');
 
-}
+  console.log(div);
 
-let item = new WorkDom(item, 'div');
-
-сonsole.log(item);
-
-/*let creat = function(tagName) {
-  this.elem = document.createElement(tagName);
-  return elem;
-};
-
-let attr = function(elem, name, value) {
-  elem.setAttribute(name, value);
-  return name + ',' + ' ' + value;
-};
-
-let html = function(elem, value) {
-  elem.innerHTML = value;
-  return value;
-};
-
-let search = function(elem, selector) {
-  this.child = elem.querySelector(selector);
-  return child;
-};
-
-let addClass = function(elem, className) {
-  elem.classList.add(className);
-};
-
-let removeClass = function(elem, className) {
-  elem.classList.remove(className);
-};
-
-let toggleClass = function(elem, className) {
-  elem.classList.toggle(className);
-};
-
-let hasClass = function(elem, className) {
-  return elem.classList.contains(className);
-};
-
-let append = function(elem, newElem, beforeElem) {
-  if (beforeElem !== undefined) {
-  elem.insertBefore(newElem, beforeElem);
-  } else {
-    elem.appendChild(newElem);
-  }
-};
-
-let changeColor = function(elem, color = 'red') {
-  elem.style.backgroundColor = color;
-};
-
-let on = function(elem, eventName, funcName = changeColor()) {
-  elem.addEventListener(eventName, funcName());
-};
-
-on(div, click); // - после вызова этой функции появляется ошибка
-*/
 
 });
+
