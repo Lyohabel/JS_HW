@@ -27,7 +27,7 @@ window.addEventListener('load', function() {
         const elem = document.createElement(tagName, value);
         elem.innerHTML = value;
             
-        return element;
+        return elem;
     };
 
     this.attr = function(elem, name, value) {
@@ -64,22 +64,34 @@ window.addEventListener('load', function() {
     };
     
     this.append = function(elem, newElem, beforeElem) {
-        if (beforeElem == undefined) to.appendChild(elem);
+        if (beforeElem == undefined) elem.appendChild(newElem);
         else newElem.insertBefore(eleme, beforeElem);
     };
 
     this.on = function(elem, eventName) {
-    elem.addEventListener(eventName, function() {});
+    elem.addEventListener(eventName,/*function() {} , например: */ changeColor(elem, eventName));
     };
   };
 
-  function changeBGC(elem, eventName) {
-    elem.style.backgroungColor = 'red';
-  };
+  // ---------------------------------------------
+
+  function changeColor(elem, eventName) {
+    elem.addEventListener(eventName, function() {
+    elem.style.color = 'red';
+  });
+};
   
   const dom = new DOM();
   
   const div = dom.create('div', 'XXXXXXXXXX');
+
+  //div.style.color = 'red';
+
+  dom.attr(div, 'class', 'block');
+
+  dom.append(document.body, div);
+
+  dom.on(div, 'click');
 
   console.log(div);
 
