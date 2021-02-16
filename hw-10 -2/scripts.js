@@ -1,27 +1,4 @@
 window.addEventListener('load', function() {
-/* Дополнительное задание (обязательное):
-Создайте функцию-конструктор для работы с DOM, а также новый объект на
-основе этого конструктора.
-В объекте должны быть реализованы более простые в использовании методы по
-работе с DOM:
- create(‘tagName’) для создание и возврата новых элементов по имени тега;
- attr(‘element’, ‘name’, [‘value’]) для добавления атрибута к элементу или возврата
-значения атрибута;
- html(‘element’, [‘value’]) для добавления любого содержимого внутрь элемента или его
-возврата;
- search(‘element’, ‘selector’) для поиска и возврата найденных элементов внутри
-переданного или в document по селектору CSS.
- addClass(‘element’, ‘className’) для добавления класса к элементу;
- removeClass(‘element’, ‘className’) для удаления класса из элемента;
- toggleClass(‘element’, ‘className’) для переключения класса в элементе;
- hasClass(‘element’, ‘className’) для проверки существования класса в элементе
-(должен вернуть true или false);
- append(‘element’, ‘newElement’, [‘beforeElement’]) для добавления новых элементов
-внутрь какого-либо после всего его содержимого, либо перед каким-то конкретным;
- on(‘element’, ‘eventName’, ‘funcName’) для добавления к элементу события и
-выполнения функции (проверьте доступность контекста this и event).
-*/
-
   const DOM = function() {
     this.create = function(tagName, value) {
         const elem = document.createElement(tagName, value);
@@ -91,10 +68,23 @@ window.addEventListener('load', function() {
 
   dom.append(document.body, div);
 
-  dom.on(div, 'click');
+  //dom.on(div, 'click');
 
   console.log(div);
 
+Func = function(elem, eventName, funcName) {
+  let func2 = funcName,
+      event2 = eventName;
+  //this.elem.addEventListener(event2, func2());
+
+  this.getInfo = function() {
+    console.log(func2, event2);
+  }
+};
+
+func = new Func(div, 'click', changeColor);
+
+func.getInfo();
 
 });
 
