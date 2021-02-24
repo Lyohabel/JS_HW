@@ -214,7 +214,9 @@ class ContactsApp extends Contacts {
             removeUser.classList.add('user-revove');
             removeUser.innerHTML = 'REMOVE';
             removeUser.setAttribute('data-id', user.data.id);
-            li.appendChild(removeUser);            
+            li.appendChild(removeUser);          
+
+            //console.log(self);
 
             editUser.addEventListener('click', function(event) {
                 self.onEdit(event.target.dataset.id);
@@ -227,87 +229,27 @@ class ContactsApp extends Contacts {
     )};
 
     onEdit(id) {
-        let ind = this.data.findIndex(item => item.data.id == id);        
+        let ind = this.data.findIndex(item => item.data.id == id);
 
-        let indUser = this.data[ind],
-            indData = this.data[ind].data,
-            list = document.querySelector('ul'),
-            listItem = list.children[ind];
+        console.log(ind);
 
-        let form = document.createElement('div');
-        form.classList.add('form');
-        listItem.appendChild(form);
-        let id1 = document.createElement('input');
-        id1.setAttribute('type', 'text');
-        id1.setAttribute('name', 'user-id');
-        id1.setAttribute('placeholder', 'id');
-        form.appendChild(id1);
-        let name = document.createElement('input');
-        name.setAttribute('type', 'text');
-        name.setAttribute('name', 'user-name');
-        name.setAttribute('placeholder', 'name');
-        form.appendChild(name);
-        let email = document.createElement('input');
-        email.setAttribute('type', 'text');
-        email.setAttribute('name', 'user-email');
-        email.setAttribute('placeholder', 'email');
-        form.appendChild(email);
-        let address = document.createElement('input');
-        address.setAttribute('type', 'text');
-        address.setAttribute('name', 'user-address');
-        address.setAttribute('placeholder', 'address');
-        form.appendChild(address);
-        let phone = document.createElement('input');
-        phone.setAttribute('type', 'text');
-        phone.setAttribute('name', 'user-phone');
-        phone.setAttribute('placeholder', 'phone');
-        form.appendChild(phone);
-    
-        let addAfterEdit = document.createElement('button');
-        addAfterEdit.classList.add('user-add');
-        addAfterEdit.innerHTML = 'Add after edit';
-        form.appendChild(addAfterEdit);
-        
-        id1.value = indData.id;
-        name.value = indData.name;
-        email.value = indData.email;
-        address.value = indData.address;
-        phone.value = indData.phone;
+        console.log(this.data[0].data.id);
 
-        let self = this;        
-
-        addAfterEdit.addEventListener('click', function() {
-
-            let obj = {
-                id: id1.value,
-                name: name.value,
-                email: email.value,
-                address: address.value,
-                phone: phone.value
-            }
-            
-            self.edit((ind + 1), obj);
-
-            self.updateList();            
-        });
-
-        /*        
-        
         let userId = this.app.querySelector('input[name="user-id"]'),
             userName = this.app.querySelector('input[name="user-name"]'),
             userEmail = this.app.querySelector('input[name="user-email"]'),
             userAddress = this.app.querySelector('input[name="user-address"]'),
             userPhone = this.app.querySelector('input[name="user-phone"]');            
 
-        userId.value = indData.id;
-        userName.value = indData.name;
-        userEmail.value = indData.email;
-        userAddress.value =indData.address;
-        userPhone.value = indData.phone;
+        userId.value = this.data[ind].data.id;
+        userName.value = this.data[ind].data.name;
+        userEmail.value = this.data[ind].data.email;
+        userAddress.value = this.data[ind].data.address;
+        userPhone.value = this.data[ind].data.phone;
 
         this.remove(id); 
 
-        this.data[ind].data.id = userId.value;
+        /*this.data[ind].data.id = userId.value;
         this.data[ind].data.name = userName.value;
         this.data[ind].data.email = userEmail.value;
         this.data[ind].data.address = userAddress.value;
@@ -320,9 +262,14 @@ class ContactsApp extends Contacts {
     onRemove(id) {
         this.remove(id);      
 
-        this.updateList();        
-    }
+        this.updateList();
+        
+    }   
+
 }
+
+//не изменять методы и свойства классов User и Contacts
+
 
 window.addEventListener('load', function() {
 
