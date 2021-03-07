@@ -38,7 +38,7 @@ class Contacts {
         this.data.forEach(function(user, i) {
             
             if (+user.data.id == +id) ind = i; 
-        });        
+        });
       
         if (obj.name) this.data[ind].data.name = obj.name;
         if (obj.address) this.data[ind].data.address = obj.address;
@@ -71,11 +71,9 @@ class ContactsApp extends Contacts {
 
         if (!window.localStorage.getItem('allUsers')) {
             this.getData();
-        } else {
-            this.ui();  
         };
 
-              
+        //this.ui();        
     }
 
     ui() {
@@ -175,7 +173,8 @@ class ContactsApp extends Contacts {
         this.data.forEach (function(user) {
             let li = document.createElement('li');
             if (user.data == undefined) {
-                user.data = user;                
+                user.data = user;
+                li.setAttribute('class', 'fake');
             };
             //if (typeof user.data.address == 'object') user.data.address = user.data.address.street;            
             li.innerHTML = `
@@ -211,14 +210,13 @@ class ContactsApp extends Contacts {
         });
 
         console.log(this);
-        console.log(window.localStorage.getItem('allUsers'));
 
-
-        if (!window.localStorage.getItem('allUsers')) { }; 
+        //if (!window.localStorage.getItem('allUsers')) { }; 
             window.localStorage.clear();
             let dataStr = JSON.stringify(this.data);
             window.localStorage.setItem('allUsers', dataStr);
-            document.cookie = 'storageExpiration=true; max-age=300'; // 10 дней = 10*24**3600 = 864000 сек         
+            document.cookie = 'storageExpiration=true; max-age=300'; // 10 дней = 10*24**3600 = 864000 сек
+          
         
     };
 
@@ -314,20 +312,24 @@ class ContactsApp extends Contacts {
 
         console.log(fake);
 
-        fetch('/data.json')
+        fetch('https://jsonplaceholder.typicode.com/users')
         .then((response) => {
               return response.json();
         })
         .then((data) => {
 
-            /*data.forEach (function(user) {
+            data.forEach (function(user) {
                 delete user.username;
                 delete user.website;
                 delete user.company;
                 user.address = 'xxx';
-            });*/            
+            });
 
-            console.log(data);            
+            let dataStr1 = JSON.stringify(data);
+
+            console.log(dataStr1);
+
+            data = dataStr1.json();
               
             self.data = data;
               

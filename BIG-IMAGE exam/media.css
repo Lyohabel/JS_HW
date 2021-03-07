@@ -1,0 +1,50 @@
+/* all, screen, print, speech;
+not, only; ,=or, and=both;
+orientation: landscape; - <1024
+
+! 1280; 1152; 800 
+
+@media screen and (max-width: 768px) {} */
+
+@media screen and (max-width: 768px) {
+
+    .popup-wrap {
+        width: 90%;
+        
+    }
+
+    .popup img {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .images a {
+        margin: 0;
+        margin-bottom: 15px;        
+    }
+
+    .popup-wrap {
+        width: 95%;
+        
+    }    
+}
+
+@media screen and (max-width: 815px) and (orientation: landscape) {
+    .container {
+        width: 90%;
+    }
+    
+    .popup-wrap, .popup img {
+        max-width: 300px;
+        max-height: 300px;
+        
+    } 
+}
+
+@media screen and (max-width: 580px) and (orientation: landscape) {
+    .popup-wrap, .popup img {
+        max-width: 280px;
+        max-height: 280px;        
+    }
+}
