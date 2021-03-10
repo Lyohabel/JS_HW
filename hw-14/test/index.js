@@ -1,75 +1,55 @@
-class App {
-    init() {
-        document.querySelector('html').setAttribute('lang', 'en'); 
+import {App} from './app/app.js';
 
-        let title = document.createElement('title');
-        title.innerHTML = 'xxxxx';
+import {Header} from './app/header.js';
 
-        let metaUtf8 = document.createElement('meta');
-        metaUtf8.setAttribute('charset', 'UTF-8');
+import {Nav} from './app/nav.js';
 
-        let style = document.createElement('link');
-        style.setAttribute('rel', 'stylesheet');
-        style.setAttribute('href', 'css/style.css');
+import {Main} from './app/main.js';
 
-        let media = document.createElement('link');
-        media.setAttribute('rel', 'stylesheet');
-        media.setAttribute('href', 'css/media.css');
+import {Footer} from './app/footer.js';
 
+let app = new App(),
+    header = new Header(),
+    nav = new Nav(),
+    main = new Main(),
+    footer = new Footer();
 
-        document.head.appendChild(title);
-        document.head.appendChild(metaUtf8);
-        document.head.appendChild(style);
-        document.head.appendChild(media);
+app.init();
 
-        let element = this.create();
+header.init();
 
-        this.render(element);
-    }
+nav.init();
 
-    create() {
-        let element = document.createElement('div');
-        element.setAttribute('class', 'app');
-        return element;
-    }
+main.init();
 
-    render(item) {
-        let app = document.querySelector('.app');
-        if (app == null) {
-            document.body.appendChild(item);
-        } else {
-            app.appendChild(item);
-          };
-    }
-}
-
-let test = new App();
-
-let elem = test.init();
-
-console.log(test);
-
-
-//document.body.appendChild(elem);
-
-// console.log(elem);
-
-// console.log(test.render);
-
-// test.render(elem);
-
-// let app1 = document.querySelector('.app');
-
-// let elem2 = document.createElement('p');
-
-// test.render(elem2);
-
-// console.log(app1);
-
-
+footer.init();
 
 
 /*
+6. На главной странице сайта по адресу http://localhost/ отобразите список
+товаров, полученных из localStorage. Дизайн может быть любым.
+
+
+5. В классе главного компонента реализуйте метод для получения данных из
+«Fake» API сервиса https://fakestoreapi.com/products. Данные должны быть
+сохранены localStorage. Если в localStorage уже есть эти данные, повторно
+получать их не нужно. Метод должен быть запущен при инициализации и до
+отрисовки в DOM.
+
+
+4. Создайте общие структурные компоненты (Header, Nav, Main, Footer). В
+каждом компоненте (в классе) должны быть реализованы методы:
+• Метод create() для создания соотв. элемента со своим именем класса и сохранения его в
+свойстве «element», а также для добавления в него содержимого.
+• Метод init() для инициализации компонента — для вызова метода create() и возврата элемента
+из метода.
+Все созданные компоненты должны находится в папке «components».
+Выполните экспорт элемента из объекта каждого класса с помощью метода
+init(), например:
+const footer = new Footer().init();
+export {footer};
+
+
 2. Создайте папку «components» и добавьте в нее файл App.js. В файле создайте
 класс «App» (главный компонент вашего приложения) со следующими
 методами:
